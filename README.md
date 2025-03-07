@@ -4,52 +4,35 @@
 The **Last Bot Standing** is a chatbot designed with a hidden secret that can only be uncovered through interactions. The bot uses various logic puzzles, riddles, and coded clues to engage users and gradually reveal the secret. This bot was developed using **Dialogflow CX** and integrated into a webpage via **Dialogflow Messenger**.
 
 ## Secret Explanation
-The secret is hidden within the following riddle:
 
-- **Riddle**: "I have keys but open no locks. What am I?"
-  - **Answer**: **Keyboard**
+- **Start Challenge** → **Riddle** (e.g., "Who is known as the father of modern computing?") → 
+- **Math Puzzle** (e.g., "What is 6 + 7?") → **Cipher Clue** (e.g., "Encrypted Message") → 
+- **Final Secret Revealed**.
 
 To reveal this secret, the user must first solve this riddle.
 
 ## Bot Flow
 
-### 1. **Start Interaction**
-When the user presses **Start**, the bot greets them with a welcome message and presents the first challenge.
+### 1. **Start Page**
+- **Trigger**: The user clicks "Start Challenge."
+- **Bot Message**: The bot presents the first riddle to the user.
+- **Transition**: Upon receiving the correct answer, the bot moves to the **Riddle Page**. If the answer is incorrect, the bot asks the user to try again.
 
-- **Welcome Message**: "Hello! Ready for a challenge? Let's begin with the first riddle."
-- **Riddle**: "I have keys but open no locks. What am I?"
-  - **User Input**: The user responds with the answer.
-  - **Correct Answer**: "Keyboard"
-  - If correct, the bot proceeds to the next challenge.
-  - If incorrect, the bot will prompt them to try again.
+### 2. **Riddle Page**
+- **Trigger**: The user submits an answer to the riddle.
+- **Bot Message**: If correct, the bot presents a **math puzzle** to the user. If incorrect, the bot asks for the correct answer or gives a hint.
+- **Transition**: If the user answers the math puzzle correctly, the bot moves to the **Math Page**. If the answer is wrong, it will prompt them to try again.
 
-### 2. **Math Puzzle (after solving the riddle)**
-Once the user solves the riddle, the bot presents the next challenge.
+### 3. **Math Page**
+- **Trigger**: The user submits the correct answer to the math puzzle.
+- **Bot Message**: The bot presents a **cipher clue** that needs to be decoded.
+- **Transition**: Upon solving the cipher clue correctly, the bot moves to the **Cipher Page**. If the answer is wrong, the bot will offer hints or prompts the user to retry.
 
-- **Message**: "Well done! Here’s your next challenge:"
-- **Math Puzzle**: "What comes next in this sequence? 2, 6, 12, 20, __?"
-  - **User Input**: The user responds with the answer.
-  - **Correct Answer**: "30"
-  - If correct, the bot proceeds to the next clue.
-  - If incorrect, the bot will ask them to try again.
+### 4. **Cipher Page**
+- **Trigger**: The user solves the cipher clue correctly.
+- **Bot Message**: The bot reveals the **final secret message**. The bot may also give an option to restart the challenge or exit the game.
 
-### 3. **Cipher (Secret Code) Clue (after solving the math puzzle)**
-After solving the math puzzle, the bot gives a coded message to solve using a simple cipher.
-
-- **Message**: "Nice job! Now let’s decode this secret message:"
-- **Cipher Clue**: "Uif tfdsfu dpef mjhiu"
-  - **User Input**: The user decodes the message.
-  - **Hint**: This is a Caesar Cipher with a shift of 1. (This means each letter is shifted by 1 in the alphabet).
-  - **Correct Answer**: "The secret code is"
-  - If correct, the bot reveals the hidden secret.
-  - If incorrect, the bot will provide a hint and ask them to try again.
-
-### 4. **Secret Revealed**
-Once the user decodes the cipher, the bot reveals the hidden secret:
-
-- **Message**: "Congratulations! You've uncovered the secret: **Keyboard**"
-
-Each challenge is designed to test the user’s ability to solve riddles, math puzzles, and logic problems.
+#### Each challenge is designed to test the user’s ability to solve riddles, math puzzles, and logic problems.
 ---
 
 ## Deployment Link
