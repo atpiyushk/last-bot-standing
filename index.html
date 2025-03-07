@@ -4,34 +4,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LastBotStanding - Chatbot</title>
+    <title>Last Bot Standing - The Ultimate Chatbot Challenge</title>
     <link rel="stylesheet"
         href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
     <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
-    <style>
-        df-messenger {
-            z-index: 999;
-            position: fixed;
-            --df-messenger-font-color: #000;
-            --df-messenger-font-family: Google Sans;
-            --df-messenger-chat-background: #f3f6fc;
-            --df-messenger-message-user-background: #d3e3fd;
-            --df-messenger-message-bot-background: #fff;
-            bottom: 16px;
-            right: 16px;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <div class="logo-icon">
+                    <div class="bot-face">
+                        <div class="eye left"></div>
+                        <div class="eye right"></div>
+                        <div class="mouth"></div>
+                    </div>
+                </div>
+                <h1>Last Bot Standing</h1>
+            </div>
+            <div class="theme-toggle">
+                <input type="checkbox" id="theme-switch">
+                <label for="theme-switch" class="toggle-label">
+                    <span class="toggle-icon">🌙</span>
+                    <span class="toggle-icon">☀️</span>
+                </label>
+            </div>
+        </header>
 
-    <!-- Dialogflow Messenger Chatbot -->
+        <main>
+            <section class="hero">
+                <div class="hero-content">
+                    <h2>Can You Uncover the Secret?</h2>
+                    <p>Solve riddles, crack codes, and overcome puzzles to reveal the hidden message.</p>
+                    <div class="challenge-steps">
+                        <div class="step">
+                            <div class="step-icon">1</div>
+                            <div class="step-text">Solve a riddle</div>
+                        </div>
+                        <div class="step-connector"></div>
+                        <div class="step">
+                            <div class="step-icon">2</div>
+                            <div class="step-text">Crack a math puzzle</div>
+                        </div>
+                        <div class="step-connector"></div>
+                        <div class="step">
+                            <div class="step-icon">3</div>
+                            <div class="step-text">Decode the cipher</div>
+                        </div>
+                        <div class="step-connector"></div>
+                        <div class="step">
+                            <div class="step-icon">4</div>
+                            <div class="step-text">Uncover the secret</div>
+                        </div>
+                    </div>
+                    <button id="start-challenge" class="start-btn">Type "Start"</button>
+                </div>
+                <div class="hero-image">
+                    <div class="robot">
+                        <div class="robot-head">
+                            <div class="antenna"></div>
+                            <div class="robot-face">
+                                <div class="robot-eye left"></div>
+                                <div class="robot-eye right"></div>
+                                <div class="robot-mouth"></div>
+                            </div>
+                        </div>
+                        <div class="robot-body">
+                            <div class="robot-chest">
+                                <div class="button"></div>
+                                <div class="button"></div>
+                            </div>
+                            <div class="robot-arm left"></div>
+                            <div class="robot-arm right"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">🧩</div>
+                    <h3>Challenging Riddles</h3>
+                    <p>Test your wit with clever riddles that will make you think outside the box.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔢</div>
+                    <h3>Math Puzzles</h3>
+                    <p>Solve mathematical puzzles that require logical thinking and problem-solving skills.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔐</div>
+                    <h3>Cryptic Ciphers</h3>
+                    <p>Decode encrypted messages using various cipher techniques to progress through the challenge.</p>
+                </div>
+            </section>
+
+            <section class="how-to-play">
+                <h2>How to Play</h2>
+                <div class="steps-container">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h3>Click "Start Challenge"</h3>
+                        <p>Begin your journey by clicking the Start Challenge button above.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h3>Interact with the Bot</h3>
+                        <p>The chatbot will present you with a series of challenges. Type your answers in the chat
+                            window.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <h3>Progress Through Stages</h3>
+                        <p>Each correct answer unlocks the next challenge. Solve all challenges to reveal the final
+                            secret.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Last Bot Standing. All rights reserved.</p>
+        </footer>
+    </div>
+
     <df-messenger location="asia-south1" project-id="last-bot-standing" agent-id="a2dc9f26-aafe-4926-925c-daa3d521ec6d"
-        language-code="en" max-query-length="-1">
-        <df-messenger-chat-bubble chat-title="LastBotStanding">
-        </df-messenger-chat-bubble>
+        language-code="en" max-query-length="-1" expand="true">
     </df-messenger>
 
+    <script src="script.js"></script>
 </body>
 
 </html>
