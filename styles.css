@@ -611,7 +611,6 @@ df-messenger {
     --df-messenger-message-user-text-color: white;
     --df-messenger-input-box-color: var(--card-bg);
     --df-messenger-input-border-color: var(--border-color);
-    --df-messenger-input-font-color: var(--text-color);
     --df-messenger-font-family: 'Roboto', sans-serif;
     --df-messenger-input-placeholder-font-color: var(--light-text);
 }
