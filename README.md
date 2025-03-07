@@ -37,7 +37,7 @@ To reveal this secret, the user must first solve this riddle.
 
 ## Deployment Link
 The bot has been deployed using **Dialogflow Messenger** on a webpage. You can interact with it through the link below:
-- **https://67cac1661768e1000803e946--heroic-melomakarona-8b98ea.netlify.app/**
+- **https://heroic-melomakarona-8b98ea.netlify.app/**
 
 ---
 
